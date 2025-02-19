@@ -34,3 +34,28 @@ A simple Library Management System built with the MERN stack.
    - **Username:** admin
    - **Password:** LMS-Admin123
 4. **Login** to access the admin dashboard.
+
+## How to Run Locally
+1. Clone the repository:
+   ```sh
+   https://github.com/mohdaquib171/LMS.git
+   cd LMS
+   ```
+2. Install dependencies:
+   ```sh
+   cd Backend && npm install
+   cd ../Frontend && npm install
+   ```
+3. Start the backend:
+   ```sh
+   cd Backend
+   npm start
+   ```
+4. Start the frontend:
+   ```sh
+   cd Frontend
+   npm run dev
+   ```
+## Deployment
+- **Backend**: Deployed on Render
+- **Frontend**: Deployed on Vercel
