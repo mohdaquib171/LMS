@@ -1,0 +1,39 @@
+  version: "3.8"
+
+  services:
+    backend:
+      image: mohdaquib/lms-backend:latest
+      ports:
+        - "5000:5000"
+      depends_on:
+        - mongo
+      env_file:
+        - ./Backend/.env
+      networks:
+        - lms-network
+
+    frontend:
+      image: mohdaquib/lms-frontend:latest
+      ports:
+        - "5173:5173"
+      depends_on:
+        - backend
+      networks:
+        - lms-network
+
+    mongo:
+      image: mongo
+      container_name: lms-mongo
+      restart: always
+      ports:
+        - "27017:27017"
+      networks:
+        - lms-network
+      volumes:
+        - mongo-data:/data/db
+
+  networks:
+    lms-network:
+
+  volumes:
+    mongo-data:
